@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-</style>
-</head>
-<body>
-
-<h1>Grid Elements</h1>
-
-<p>A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.</p>
-
-<p>Direct child element(s) of the grid container automatically becomes grid items.</p>
-
-<div class="grid-container">
-  <div class="grid-item">1</div>
-  <div class="grid-item">2</div>
-  <div class="grid-item">3</div>  
-  <div class="grid-item">4</div>
-  <div class="grid-item">5</div>
-  <div class="grid-item">6</div>  
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-  <div class="grid-item">9</div>  
-</div>
-
-</body>
+   <head>
+      <title>GPIO Control</title>
+      <link rel="stylesheet" href='../static/style.css'/>
+   </head>
+   <body>
+		<h2>Actuators</h2>
+		<h3> Status </h3>
+		     Remote
+		<h3></h3>
+			<a href="/left" class="button">ON/OFF</a>  
+			<a href="/right"class="button">VOL+</a>
+			<a href="/up"class="button">FUNC/STOP</a>
+		<h3></h3>
+			<a href="/left" class="button">&#x23EE</a>  
+			<a href="/right"class="button">&#x23EF</a>
+			<a href="/up"class="button">&#x23ED</a>
+		<h3></h3>
+			<a href="/left" class="button">&#9660</a>  
+			<a href="/right"class="button">VOL-</a>
+			<a href="/up"class="button">&#x25B2</a>
+		<h3></h3>
+			<a href="/left" class="button">0</a>  
+			<a href="/right"class="button">EQ</a>
+			<a href="/up"class="button">ST/REPT</a>
+		<h3></h3>
+			<a href="/left" class="button">1</a>  
+			<a href="/right"class="button">2</a>
+			<a href="/up"class="button">3</a>
+		<h3></h3>
+			<a href="/left" class="button">4</a>  
+			<a href="/right"class="button">5</a>
+			<a href="/up"class="button">6</a>
+		<h3></h3>
+			<a href="/left" class="button">7</a>  
+			<a href="/right"class="button">8</a>
+			<a href="/up"class="button">9</a>	
+		
+   </body>
 </html>
-

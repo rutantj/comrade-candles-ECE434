@@ -43,12 +43,11 @@ app = Flask(__name__)
 def index():
 	templateData = {
               'title' : 'GPIO output Status!',
-              'ledRed'  : ledRedSts,
         }
-	return render_template('index.html', **templateData)
+	return render_template('remoteVirtual.html', **templateData)
 	
-@app.route("/<deviceName>/<action>")
-def action(deviceName, action):
+@app.route("/<action>/<green>/<blue>/")
+def action(action, green, blue):
 	if ((action == "left") & (pos[0]>0)):
 		pos[0]-=1
 	elif ((action == "up") & (pos[1]>0)):
@@ -64,10 +63,9 @@ def action(deviceName, action):
 	bus.write_i2c_block_data(matrix, 0, board)
 	
 	templateData = {
-              'ledRed'  : ledRedSts,
 	}
-	return render_template('index.html', **templateData)
+	return render_template('remoteVirtual.html', **templateData)
 	
 
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=8081, debug=False)
+   app.run(host='0.0.0.0', port=8081, debug=True)
