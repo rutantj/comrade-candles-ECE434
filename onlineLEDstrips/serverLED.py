@@ -15,18 +15,14 @@ def index():
         }
 	return render_template('remoteVirtual.html', **templateData)
 	
-@app.route("/<red>/<green>/<blue>/<browserAction>")
-def action(red, green, blue, browserAction):
-	#if (browserAction == "yes")
+@app.route("/<red>/<green>/<blue>/<flash>")
+def action(red, green, blue, flash):
 	#   Send same url with browserAction changed to "no" to other bone.
-	os.system("./test.py "+red+" "+green+" "+blue+" "+str(0.5))
-	
-	templateData = {
+	os.system("pkill -9 -f ./test.py")
+	os.system("./test.py "+red+" "+green+" "+blue+" "+flash+" &")
+	templateData={
 	}
 	return render_template('remoteVirtual.html', **templateData)
-	
-
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port=8081, debug=True)
-
+	app.run(host='0.0.0.0', port=8081, debug=True)
 #end of online stuff ##################################################################################################
