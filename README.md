@@ -6,3 +6,8 @@ python pagekite.py 8081 [INSERT YOUR PAGEKITE URL]
 
 for example I ran the follwoing (no quotes)
 "python pagekite.py 8081 vandensp.pagekite.me"
+
+In the mplayer commands, the sysdefault="_____" parameter will depend on the audio output device
+that you have plugged into the BeagleBone. To see what this parameter is run command "aplay -L"
+on the BeagleBone, and change the parameter in the mplayer command.
+
