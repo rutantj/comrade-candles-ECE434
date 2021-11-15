@@ -17,22 +17,16 @@ def index():
         }
 	return render_template('remoteVirtual.html', **templateData)
 	
-@app.route("/<musicIndex>/<isSent>")
-def action(red, green, blue, flash):
-	#   Send same url with browserAction changed to "no" to other bone.
-	os.system("pkill -f mplayer")
-	if(isSent == "false"):
-		os.system("wget --spider --server-response ece434candles.pagekite.me:8081/musicIndex/true")
-	os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[musicIndex])
-	templateData={
-	}
-	return render_template('remoteVirtual.html', **templateData)
-	
-@app.route("/<red>/<green>/<blue>/<flash>")
-def action(red, green, blue, flash):
+@app.route("/<red>/<green>/<blue>/<flash>/<musicIndex>/<isSent>")
+def action(red, green, blue, flash, musicIndex, isSent):
 	#   Send same url with browserAction changed to "no" to other bone.
 	os.system("pkill -9 -f ./test.py")
 	os.system("./test.py "+red+" "+green+" "+blue+" "+flash+" &")
+	os.system("pkill -f mplayer")
+	if(isSent == "false"):
+		os.system("wget --spider --server-response ece434candles.pagekite.me:8081/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true")
+	os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[musicIndex])
+	
 	templateData={
 	}
 	return render_template('remoteVirtual.html', **templateData)
