@@ -22,7 +22,7 @@ def action(red, green, blue, flash):
 	#   Send same url with browserAction changed to "no" to other bone.
 	os.system("pkill -f mplayer")
 	if(isSent == "false"):
-		os.system("wget --spider --server-response vandensp.pagekite.me:8081/musicIndex/true")
+		os.system("wget --spider --server-response ece434candles.pagekite.me:8081/musicIndex/true")
 	os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[musicIndex])
 	templateData={
 	}
