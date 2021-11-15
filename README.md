@@ -11,3 +11,6 @@ In the mplayer commands, the sysdefault="_____" parameter will depend on the aud
 that you have plugged into the BeagleBone. To see what this parameter is run command "aplay -L"
 on the BeagleBone, and change the parameter in the mplayer command.
 
+The client side code will use the bash command
+wget --spider --server-response <url>
+to it that url.
