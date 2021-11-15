@@ -5,14 +5,6 @@ import Adafruit_BBIO.GPIO as GPIO
 from flask import Flask, render_template, request
 import os
 
-#GPIO Setup
-pauseAndPlayButton = "P8_10"
-skipButton = "P8_15"
-GPIO.setup(pauseAndPlayButton, GPIO.IN)
-GPIO.setup(skipButton, GPIO.IN)
-pauseAndPlayButtonVal = False
-skipButtonVal = False
-
 #online stuff ##################################################################################################
 
 app = Flask(__name__)
@@ -34,26 +26,7 @@ def action(red, green, blue, flash):
 	}
 	return render_template('remoteVirtual.html', **templateData)
 	
-def pauseOrPlay(pauseAndPlayButton):
-	pauseAndPlayButtonVal = True
-
-def skipSong(skipButton):
-	skipButtonVal = true
-    
-#GPIO.add_event_detect(pauseAndPlayButton, GPIO.FALLING, callback=pauseOrPlay)
-#GPIO.add_event_detect(skipButton, GPIO.FALLING, callback=skipSong)	
 	
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', port=8081, debug=True)
 #end of online stuff ##################################################################################################
-
-while(1):
-	if (pauseAndPlayButtonVal):
-		print("ppDetected")
-		pauseAndPlayButtonVal = False
-		time.sleep(0.5) #debounce delay
-		
-	if (skipButtonVal):
-		print("skip button detected")
-		skipButtonVal = False
-		time.sleep(0.5)
