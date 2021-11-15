@@ -52,6 +52,7 @@ def changeColor(colorButton):
     for i in range(0, LEDlength):
         fo.write(b"%d %d %d %d\n" % (i, r, g, b))
     fo.write(b"-1 0 0 0\n");    # Send colors to LEDs
+    os.system("wget --spider --server-response ece434candles.pagekite.me/"+r+"/"+g+"/"+b+"/"+flashDelay)
 
 def changeFlash(flashButton):
     global currFlash
@@ -61,6 +62,7 @@ def changeFlash(flashButton):
     currFlash %= flashLength
     flashDelay = flashSpeeds[currFlash]
     print("FlashDelay: ", flashDelay)
+    os.system("wget --spider --server-response ece434candles.pagekite.me/"+r+"/"+g+"/"+b+"/"+flashDelay)
 
 def pauseOrPlay(pauseAndPlayButton):
     #os.system("python pagekite.py 8081 ece434candles.pagekite.me")
@@ -68,7 +70,7 @@ def pauseOrPlay(pauseAndPlayButton):
 
 def skipSong(skipButton):
     musicIndex += 1
-    os.system("python pagekite.py 8081 ece434candles.pagekite.me/"+musicIndex+"/false")
+    os.system("wget --spider --server-response ece434candles.pagekite.me/"+musicIndex+"/false")
     time.sleep(0.05)
     
 	
