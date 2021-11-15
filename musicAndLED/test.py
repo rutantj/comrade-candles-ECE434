@@ -7,8 +7,12 @@ import sys
 #GPIO Button Setup
 colorButton = "P8_8"
 flashButton = "P8_9"
+pauseAndPlayButton = "P8_10"
+skipButton = "P8_15"
 GPIO.setup(colorButton, GPIO.IN)
 GPIO.setup(flashButton, GPIO.IN)
+GPIO.setup(pauseAndPlayButton, GPIO.IN)
+GPIO.setup(skipButton, GPIO.IN)
 
 LEDlength = 60
 print(sys.argv)
@@ -54,6 +58,17 @@ def changeFlash(flashButton):
     flashDelay = flashSpeeds[currFlash]
     print("FlashDelay: ", flashDelay)
 
+def pauseOrPlay(pauseAndPlayButton):
+    print('pp')
+    time.sleep(0.05)
+
+def skipSong(skipButton):
+    print("skip")
+    time.sleep(0.05)
+    
+	
+GPIO.add_event_detect(pauseAndPlayButton, GPIO.FALLING, callback=pauseOrPlay)
+GPIO.add_event_detect(skipButton, GPIO.FALLING, callback=skipSong)	
 GPIO.add_event_detect(colorButton, GPIO.FALLING, callback=changeColor)
 GPIO.add_event_detect(flashButton, GPIO.FALLING, callback=changeFlash)
 
