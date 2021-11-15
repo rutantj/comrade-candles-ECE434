@@ -67,7 +67,8 @@ def pauseOrPlay(pauseAndPlayButton):
     time.sleep(0.05)
 
 def skipSong(skipButton):
-    os.system("python pagekite.py 8081 ece434candles.pagekite.me/"++"/false")
+    musicIndex += 1
+    os.system("python pagekite.py 8081 ece434candles.pagekite.me/"+musicIndex+"/false")
     time.sleep(0.05)
     
 	
