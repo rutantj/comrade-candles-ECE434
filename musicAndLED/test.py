@@ -3,6 +3,7 @@ import time
 import math
 import Adafruit_BBIO.GPIO as GPIO
 import sys
+import os
 
 #GPIO Button Setup
 colorButton = "P8_8"
@@ -15,6 +16,7 @@ GPIO.setup(pauseAndPlayButton, GPIO.IN)
 GPIO.setup(skipButton, GPIO.IN)
 
 audiofiles = ['DLF11.mp3', 'Leave The Broom Where It Is.mp3', 'Take A Breath.mp3', 'DLF4.mp3' 'Put On Your Shades.mp3', 'You Should Go.mp3']
+musicIndex = 0
 
 LEDlength = 60
 print(sys.argv)
@@ -61,11 +63,11 @@ def changeFlash(flashButton):
     print("FlashDelay: ", flashDelay)
 
 def pauseOrPlay(pauseAndPlayButton):
-    print('pp')
+    #os.system("python pagekite.py 8081 ece434candles.pagekite.me")
     time.sleep(0.05)
 
 def skipSong(skipButton):
-    print("skip")
+    os.system("python pagekite.py 8081 ece434candles.pagekite.me/"++"/false")
     time.sleep(0.05)
     
 	
