@@ -14,6 +14,8 @@ GPIO.setup(flashButton, GPIO.IN)
 GPIO.setup(pauseAndPlayButton, GPIO.IN)
 GPIO.setup(skipButton, GPIO.IN)
 
+audiofiles = ['DLF11.mp3', 'Leave The Broom Where It Is.mp3', 'Take A Breath.mp3', 'DLF4.mp3' 'Put On Your Shades.mp3', 'You Should Go.mp3']
+
 LEDlength = 60
 print(sys.argv)
 r=int(sys.argv[1])
