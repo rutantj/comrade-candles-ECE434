@@ -25,7 +25,9 @@ def action(red, green, blue, flash, musicIndex, isSent):
 	os.system("pkill -f mplayer")
 	if(isSent == "false"):
 		os.system("wget --spider --server-response ece434candles.pagekite.me:8081/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true")
-	os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[musicIndex])
+		os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[int(musicIndex)])
+	if(isSent == "true"):
+		os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[int(musicIndex)])
 	
 	templateData={
 	}
