@@ -7,6 +7,7 @@ import os
 
 files = ["DLF11.mp3", "'Leave The Broom Where It Is.mp3'", "'Take A Breath.mp3'", "DLF4.mp3" "'Put On Your Shades.mp3'", "'You Should Go.mp3'"]
 
+os.system("./test.py 0 0 0 0 &")
 #online stuff ##################################################################################################
 
 app = Flask(__name__)
