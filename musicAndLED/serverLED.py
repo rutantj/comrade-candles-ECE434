@@ -7,7 +7,6 @@ import os
 
 files = ["DLF11.mp3", "'Leave The Broom Where It Is.mp3'", "'Take A Breath.mp3'", "DLF4.mp3" "'Put On Your Shades.mp3'", "'You Should Go.mp3'"]
 
-os.system("./test.py 0 0 0 0 &")
 #online stuff ##################################################################################################
 
 app = Flask(__name__)
@@ -22,10 +21,11 @@ def index():
 def action(red, green, blue, flash, musicIndex, isSent):
 	#   Send same url with browserAction changed to "no" to other bone.
 	os.system("pkill -9 -f ./test.py")
-	os.system("./test.py "+red+" "+green+" "+blue+" "+flash+" &")
+	if (isSent != "true"):
+		os.system("./test.py "+red+" "+green+" "+blue+" "+flash+" &")
 	os.system("pkill -f mplayer")
 	if(isSent == "false"):
-		os.system("wget --spider --server-response ece434candles.pagekite.me:8081/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true")
+		os.system("wget --spider --server-response ece434candles.pagekite.me/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true &")
 		os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[int(musicIndex)])
 	if(isSent == "true"):
 		os.system("mplayer -ao alsa:device=sysdefault=AT2020USB ../mp3folder/"+files[int(musicIndex)])

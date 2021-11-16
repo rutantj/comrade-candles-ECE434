@@ -1,0 +1,14 @@
+Spider mode enabled. Check if remote file exists.
+--2021-11-16 18:13:04--  http://ece434candles.pagekite.me:8081/
+Resolving ece434candles.pagekite.me (ece434candles.pagekite.me)... 45.79.218.26
+Connecting to ece434candles.pagekite.me (ece434candles.pagekite.me)|45.79.218.26|:8081... connected.
+HTTP request sent, awaiting response... 
+  HTTP/1.1 503 Unavailable
+  X-PageKite-UUID: 6ea8ae79043c121b3caf9f6a8f1cf53700d585cd
+  Content-Type: text/html; charset=utf-8
+  Pragma: no-cache
+  Expires: 0
+  Cache-Control: no-store
+  Connection: close
+Remote file does not exist -- broken link!!!
+
