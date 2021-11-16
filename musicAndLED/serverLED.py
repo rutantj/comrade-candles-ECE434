@@ -5,7 +5,7 @@ import Adafruit_BBIO.GPIO as GPIO
 from flask import Flask, render_template, request
 import os
 
-audiofiles = ["DLF11.mp3", "'Leave The Broom Where It Is.mp3'", "'Take A Breath.mp3'", "DLF4.mp3" "'Put On Your Shades.mp3'", "'You Should Go.mp3'"]
+files = ["DLF11.mp3", "'Leave The Broom Where It Is.mp3'", "'Take A Breath.mp3'", "DLF4.mp3" "'Put On Your Shades.mp3'", "'You Should Go.mp3'"]
 
 #online stuff ##################################################################################################
 
