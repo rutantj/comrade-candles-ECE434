@@ -69,8 +69,9 @@ def pauseOrPlay(pauseAndPlayButton):
     time.sleep(0.05)
 
 def skipSong(skipButton):
+    global musicIndex
     musicIndex += 1
-    os.system("wget --spider --server-response vandensp.pagekite.me/"+str(r)+"/"+str(g)+"/"+str(b)+"/"+str(flashDelay)+"/"+str(musicIndex)+"/true")
+    os.system("wget --spider --server-response vandensp.pagekite.me/"+str(r)+"/"+str(g)+"/"+str(b)+"/"+str(flashDelay)+"/"+str(musicIndex)+"/false")
     time.sleep(0.05)
     
 	

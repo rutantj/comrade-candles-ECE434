@@ -20,11 +20,11 @@ def index():
 @app.route("/<red>/<green>/<blue>/<flash>/<musicIndex>/<isSent>")
 def action(red, green, blue, flash, musicIndex, isSent):
 	#   Send same url with browserAction changed to "no" to other bone.
-	os.system("pkill -9 -f ./test.py")
+	os.system("pkill -9 -f ./test2.py")
 	os.system("./test2.py "+red+" "+green+" "+blue+" "+flash+" &")
 	os.system("pkill -f mplayer")
 	if(isSent == "false"):
-		os.system("wget --spider --server-response vandensp.pagekite.me:8081/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true")
+		os.system("wget --spider --server-response vandensp.pagekite.me/"+red+"/"+green+"/"+blue+"/"+musicIndex+"/"+"true")
 		os.system("mplayer -ao alsa:device=sysdefault=Device ../mp3folder/"+files[int(musicIndex)])
 	if(isSent == "true"):
 		os.system("mplayer -ao alsa:device=sysdefault=Device ../mp3folder/"+files[int(musicIndex)])
